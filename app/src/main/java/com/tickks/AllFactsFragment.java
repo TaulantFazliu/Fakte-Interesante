@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -21,7 +22,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
  */
 public class AllFactsFragment extends Fragment {
 
-    FloatingActionButton button= getView().findViewById(R.id)
     FactFactory factFactory;
 
 
@@ -40,10 +40,9 @@ public class AllFactsFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        FloatingActionButton button= getView().findViewById(R.id.fab);
         ListView listView=view.findViewById(R.id.list_view);;
-
-//
-    String[] facts = factFactory.faktet;
+        String[] facts = factFactory.faktet;
 
 //    ArrayAdapter<String> adapter =
 //        new ArrayAdapter<>(this, android.R.layout.simple_list_item_activated_1, facts);
@@ -61,5 +60,16 @@ public class AllFactsFragment extends Fragment {
 
     FactAdapter ourAdapter = new FactAdapter(getActivity(),facts);
     listView.setAdapter(ourAdapter);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Clicked", Toast.LENGTH_SHORT).show();
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.main_layout,new AddFact(), "ADD_NEW")
+                        .commit();
+            }
+        });
     }
 }
