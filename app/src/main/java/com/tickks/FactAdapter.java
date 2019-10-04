@@ -16,6 +16,7 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 
+import java.util.ArrayList;
 import java.util.zip.Inflater;
 
 import static androidx.core.content.ContextCompat.startActivity;
@@ -23,7 +24,7 @@ import static androidx.core.content.ContextCompat.startActivity;
 public class FactAdapter extends BaseAdapter {
 
   private Activity activity;
-  String[] list;
+  ArrayList<String> list;
   ColorFactory colorFactory=new ColorFactory();
   String []colors=colorFactory.colors;
     int []imazhet={R.drawable.ic_filter_1_black_24dp,
@@ -38,7 +39,7 @@ public class FactAdapter extends BaseAdapter {
                    R.drawable.ic_forward_10_black_24dp};
 
 
-  public FactAdapter(Activity activity,String[] list) {
+  public FactAdapter(Activity activity, ArrayList<String> list) {
     this.activity = activity;
     this.list = list;
   }
@@ -46,12 +47,12 @@ public class FactAdapter extends BaseAdapter {
   @Override
   public int getCount() {
 
-    return list.length;
+    return list.size();
   }
 
   @Override
   public String getItem(int position) {
-    return list[position];
+    return list.get(position);
   }
 
   @Override
@@ -71,7 +72,7 @@ public class FactAdapter extends BaseAdapter {
 
 
 
-   String fact=list[position];
+   String fact=list.get(position);
 
 
    int index=position%colors.length;

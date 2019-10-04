@@ -1,10 +1,11 @@
 package com.tickks;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class FactFactory {
 
-  String[] faktet = {"A quarter has 119 grooves on its edge, a dime has one less groove"
+  private String[] faktet = {"A quarter has 119 grooves on its edge, a dime has one less groove"
                      ,"Mark Twain didn't graduate from school","Slugs have 4 noses",
                       "The State of Florida is bigger than England"
                      ,"Ants stretch when they wake up in the morning"
@@ -22,12 +23,26 @@ public class FactFactory {
                      ,"Thanks to 3D printing, NASA can basically “email” tools to astronauts"
                      ,"The U.S. government saved every public tweet from 2006 through 2017"};
 
+  ArrayList<String> newFaktet=new ArrayList();
+
+  public FactFactory(){
+    for(String fact:faktet){
+      newFaktet.add(fact);
+    }
+  }
+  public ArrayList<String>getFaktet(){
+    return newFaktet;
+  }
 
   public String getFact(){
     Random r = new Random();
-    int random = r.nextInt(faktet.length);
-    String randomFact = faktet[random];
+    int random = r.nextInt(newFaktet.size());
+    String randomFact = newFaktet.get(random);
 
     return randomFact;
   }
+
+    public void addFact(String newFact) {
+    newFaktet.add(newFact);
+    }
 }

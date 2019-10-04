@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,7 +44,7 @@ public class AllFactsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         FloatingActionButton button= getView().findViewById(R.id.fab);
         ListView listView=view.findViewById(R.id.list_view);;
-        String[] facts = factFactory.faktet;
+        ArrayList<String> facts = factFactory.newFaktet;
 
 //    ArrayAdapter<String> adapter =
 //        new ArrayAdapter<>(this, android.R.layout.simple_list_item_activated_1, facts);
@@ -68,6 +70,7 @@ public class AllFactsFragment extends Fragment {
                 getFragmentManager()
                         .beginTransaction()
                         .replace(R.id.main_layout,new AddFact(), "ADD_NEW")
+                        .addToBackStack(null)
                         .commit();
             }
         });
