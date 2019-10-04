@@ -22,7 +22,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
  */
 public class AllFactsFragment extends Fragment {
 
-    FactFactory factFactory;
+    FactFactory factFactory=new FactFactory();
 
 
 

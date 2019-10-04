@@ -26,12 +26,12 @@ public class FactAdapter extends BaseAdapter {
   String[] list;
   ColorFactory colorFactory=new ColorFactory();
   String []colors=colorFactory.colors;
-    int []imazhet={R.drawable.ic_looks_one_black_24dp,
-                   R.drawable.ic_looks_two_black_24dp,
-                   R.drawable.ic_looks_3_black_24dp,
-                   R.drawable.ic_looks_4_black_24dp,
-                   R.drawable.ic_looks_5_black_24dp,
-                   R.drawable.ic_looks_6_black_24dp,
+    int []imazhet={R.drawable.ic_filter_1_black_24dp,
+                   R.drawable.ic_filter_2_black_24dp,
+                   R.drawable.ic_filter_3_black_24dp,
+                   R.drawable.ic_filter_4_black_24dp,
+                   R.drawable.ic_filter_5_black_24dp,
+                   R.drawable.ic_filter_6_black_24dp,
                    R.drawable.ic_filter_7_black_24dp,
                    R.drawable.ic_filter_8_black_24dp,
                    R.drawable.ic_filter_9_black_24dp,
