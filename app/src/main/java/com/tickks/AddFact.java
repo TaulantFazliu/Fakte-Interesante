@@ -33,7 +33,7 @@ public class AddFact extends Fragment {
         TextView addFactText= view.findViewById(R.id.new_fact_view);
         EditText faktiIRi=view.findViewById(R.id.editText);
         Button butoniCancel=view.findViewById(R.id.cancel_buton);
-        Button butoniSave=view.findViewById(R.id.butoni_save);
+        Button butoniSave=view.findViewById(R.id.update_button);
 
         butoniCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +46,7 @@ public class AddFact extends Fragment {
             public void onClick(View view) {
                 String newFact=addFactText.getText().toString();
                 Toast.makeText(getActivity(),newFact,Toast.LENGTH_SHORT).show();
-                FactFactory factory=new FactFactory();
+                FactFactory factory=new FactFactory(getContext());
                 factory.addFact(newFact);
                 getActivity().onBackPressed();
             }
