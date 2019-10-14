@@ -15,11 +15,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher" />
 
-    <Button
+    <TextView
         android:id="@+id/fact_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#F44336"
         android:padding="8dp"
         android:text="A quarter has 119 grooves on its edge, a dime has one less groove"
         android:textStyle="bold"

@@ -5,7 +5,8 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddFact">
+    tools:context=".AddFact"
+    android:background="@drawable/gradienti">\
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -39,7 +40,9 @@
         app:layout_constraintEnd_toStartOf="@+id/update_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintVertical_bias="0.26"
+        android:background="@color/blac"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/update_button"
@@ -57,7 +60,9 @@
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toEndOf="@+id/cancel_buton"
         app:layout_constraintTop_toBottomOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintVertical_bias="0.26"
+        android:background="@color/blac"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/new_fact_view"
@@ -66,6 +71,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginBottom="11dp"
+        android:textStyle="bold"
         android:text="Add a new Fact"
         app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintStart_toStartOf="parent" />

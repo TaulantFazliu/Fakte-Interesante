@@ -13,9 +13,7 @@ import android.widget.Toast;
 
 public class AllFactActivity extends AppCompatActivity {
 
-  FactFactory factFactory = new FactFactory();
 
-  ListView listView;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +22,8 @@ public class AllFactActivity extends AppCompatActivity {
 
     FragmentManager fragmentManager =getSupportFragmentManager();
     fragmentManager
-            .beginTransaction().add(R.id.main_layout,new AllFactsFragment(),"Aktiviteti")
+            .beginTransaction()
+            .add(R.id.main_layout,new AllFactFragment(),"Aktiviteti")
             .commit();
 
 //

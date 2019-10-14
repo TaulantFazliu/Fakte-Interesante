@@ -44,7 +44,7 @@ public class AddFact extends Fragment {
         butoniSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String newFact=addFactText.getText().toString();
+                String newFact=faktiIRi.getText().toString();
                 Toast.makeText(getActivity(),newFact,Toast.LENGTH_SHORT).show();
                 FactFactory factory=new FactFactory(getContext());
                 factory.addFact(newFact);

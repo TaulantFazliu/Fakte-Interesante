@@ -57,7 +57,6 @@ public class FactAdapter extends BaseAdapter {
 
   @Override
   public long getItemId(int position) {
-
     return 0;
   }
 
@@ -79,16 +78,16 @@ public class FactAdapter extends BaseAdapter {
     String color=colors[index];
 
 
-   view.setBackgroundColor(Color.parseColor(color));
+   view.setBackgroundColor(R.drawable.gradienti3);
 
 //   icon.setImageResource(R.drawable.ic_lightbulb_outline_black_24dp);
 
 
 
-   Button title=view.findViewById(R.id.fact_text);
+   TextView title=view.findViewById(R.id.fact_text);
    title.setText(fact);
    title.setTextColor(Color.WHITE);
-   title.setBackground(Drawable.createFromPath(color));
+
 
     return view;
   }
