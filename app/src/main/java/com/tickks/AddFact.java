@@ -33,7 +33,7 @@ public class AddFact extends Fragment {
         TextView addFactText= view.findViewById(R.id.new_fact_view);
         EditText faktiIRi=view.findViewById(R.id.editText);
         Button butoniCancel=view.findViewById(R.id.cancel_buton);
-        Button butoniSave=view.findViewById(R.id.update_button);
+        Button butoniSave=view.findViewById(R.id.save_button);
 
         butoniCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,15 +43,35 @@ public class AddFact extends Fragment {
         });
         butoniSave.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                String newFact=faktiIRi.getText().toString();
-                Toast.makeText(getActivity(),newFact,Toast.LENGTH_SHORT).show();
-                FactFactory factory=new FactFactory(getContext());
-                factory.addFact(newFact);
-                getActivity().onBackPressed();
+            public void onClick(View v) {
+                String newFact = faktiIRi.getText().toString();
+
+                if (validate(newFact)) {
+                    addFact(newFact);
+                } else {
+                    faktiIRi.setError("The fact should have more then 5 characters");
+                }
             }
         });
+
     }
+
+    private boolean validate(String newFact) {
+        Toast.makeText(getActivity(), newFact, Toast.LENGTH_SHORT).show();
+        newFact = newFact.trim();
+        if (newFact.length() < 5) {
+            return false;
+        }
+        return true;
+
+    }
+    private void addFact(String newFact) {
+        FactFactory factory = new FactFactory(getContext());
+        factory.addFact(newFact);
+        getActivity().onBackPressed();
+    }
+
+
 
 
     @Override
