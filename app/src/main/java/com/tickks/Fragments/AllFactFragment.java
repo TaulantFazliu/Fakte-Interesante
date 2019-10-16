@@ -1,4 +1,4 @@
-package com.tickks;
+package com.tickks.Fragments;
 
 
 import android.app.AlertDialog;
@@ -13,11 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.tickks.Adapters.FactAdapter;
+import com.tickks.Factories.FactFactory;
+import com.tickks.R;
 
 import java.util.ArrayList;
 
@@ -142,7 +144,7 @@ public class AllFactFragment extends Fragment {
 
     private void getLatestData() {
         facts = factFactory.getFaktet();
-        ourAdapter.list = facts;
+        ourAdapter.setList(facts);
     }
 
 
