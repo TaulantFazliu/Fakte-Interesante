@@ -39,7 +39,7 @@ public class UpdateFactFragment extends Fragment {
 
         Button updateButton = view.findViewById(R.id.update_button);
         EditText factText = view.findViewById(R.id.fact_text);
-        Button cancelButton = view.findViewById(R.id.cancel_button);
+        Button cancelButton = view.findViewById(R.id.cancel_buton);
 
         updateButton.setOnClickListener(v -> {
             factFactory.updateFact(fact,factText.getText().toString());
