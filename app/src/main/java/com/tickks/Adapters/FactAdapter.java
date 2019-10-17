@@ -1,32 +1,28 @@
-package com.tickks;
+package com.tickks.Adapters;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
-import androidx.core.content.ContextCompat;
+
+import com.tickks.Factories.ColorFactory;
+import com.tickks.R;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
-
-import static androidx.core.content.ContextCompat.startActivity;
 
 public class FactAdapter extends BaseAdapter {
 
   private Activity activity;
   ArrayList<String> list;
   ColorFactory colorFactory=new ColorFactory();
-  String []colors=colorFactory.colors;
+  String []colors=colorFactory.getColors();
     int []imazhet={R.drawable.ic_filter_1_black_24dp,
                    R.drawable.ic_filter_2_black_24dp,
                    R.drawable.ic_filter_3_black_24dp,
@@ -44,7 +40,11 @@ public class FactAdapter extends BaseAdapter {
     this.list = list;
   }
 
-  @Override
+    public void setList(ArrayList<String> list) {
+        this.list = list;
+    }
+
+    @Override
   public int getCount() {
 
     return list.size();
@@ -89,6 +89,7 @@ public class FactAdapter extends BaseAdapter {
    TextView title=view.findViewById(R.id.fact_text);
    title.setText(fact);
    title.setTextColor(Color.WHITE);
+
 
 
     return view;

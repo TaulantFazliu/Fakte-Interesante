@@ -1,8 +1,7 @@
-package com.tickks;
+package com.tickks.Activities;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,7 +12,9 @@ import android.os.Bundle;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import java.util.Random;
+import com.tickks.Factories.ColorFactory;
+import com.tickks.Factories.FactFactory;
+import com.tickks.R;
 
 public class MainActivity extends AppCompatActivity {
 

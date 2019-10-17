@@ -1,4 +1,4 @@
-package com.tickks;
+package com.tickks.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.tickks.Factories.FactFactory;
+import com.tickks.R;
 
 public class UpdateFactFragment extends Fragment {
 

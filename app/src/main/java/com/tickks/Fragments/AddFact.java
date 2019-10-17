@@ -1,4 +1,4 @@
-package com.tickks;
+package com.tickks.Fragments;
 
 
 import android.os.Bundle;
@@ -14,6 +14,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.tickks.Factories.FactFactory;
+import com.tickks.R;
 
 
 /**
