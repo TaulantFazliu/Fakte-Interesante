@@ -78,6 +78,8 @@ public class FactAdapter extends BaseAdapter {
     String color=colors[index];
 
 
+
+
    view.setBackgroundColor(R.drawable.gradienti3);
 
 //   icon.setImageResource(R.drawable.ic_lightbulb_outline_black_24dp);
